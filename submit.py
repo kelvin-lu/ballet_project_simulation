@@ -111,8 +111,8 @@ def _make_github_client(token):
 def create_pull_request(gh, project, user, feature, dry_run=False):
     branch_name = _make_branch_name(user, feature)
     owner = project.get("project", "owner")
-    name = project.get("project", "name")
-    ghrepo = gh.get_repo("{owner}/{name}".format(owner=owner, name=name))
+    slug = project.get("project", "slug")
+    ghrepo = gh.get_repo("{owner}/{name}".format(owner=owner, name=slug))
 
     # prepare PR metadata
     title = "Propose new feature"
