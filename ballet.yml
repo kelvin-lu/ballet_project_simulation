@@ -1,0 +1,42 @@
+project:
+  name: ballet project simulation
+  owner: kelvin-lu
+  slug: ballet_project_simulation
+  remote: origin
+
+problem:
+  problem_type: classification
+  problem_type_details:
+    scorer: n/a
+    classification_type: n/a
+
+contrib:
+  module_name: ballet_project_simulation.features.contrib
+  module_path: ballet_project_simulation/features/contrib
+
+data:
+  s3_bucket: todo
+  s3_bucket_region: todo
+  train: data/train
+  entities_table_name: entities
+  targets_table_name: targets
+
+tables:
+  -
+    name: entities
+    path: entities.csv
+    pd_read_kwargs:
+      index_col: 0
+      header: 0
+      sep: ","
+  -
+    name: targets
+    path: targets.csv
+    pd_read_kwargs:
+      index_col: 0
+      header: 0
+      sep: ","
+
+github:
+  pruning_action: commit_to_master
+  accept_passing_features: yes
