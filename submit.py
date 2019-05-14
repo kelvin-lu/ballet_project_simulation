@@ -19,9 +19,9 @@ from ballet.util.log import stacklog
 
 
 def _get_project():
-    import ballet_ames_simulation
+    import ballet_project_simulation
 
-    return ballet.project.Project(ballet_ames_simulation)
+    return ballet.project.Project(ballet_project_simulation)
 
 
 def _make_branch_name(user, feature):
