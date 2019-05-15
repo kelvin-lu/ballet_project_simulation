@@ -1,0 +1,12 @@
+from ballet import Feature
+import ballet.eng
+import sklearn.preprocessing
+
+
+input = ["Condition 2"]
+transformer = [
+    ballet.eng.missing.NullFiller(replacement="None"),
+    sklearn.preprocessing.OneHotEncoder(),
+]
+name = "Condition 2 type"
+feature = Feature(input=input, transformer=transformer, name=name)
